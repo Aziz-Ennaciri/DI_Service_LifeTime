@@ -15,4 +15,3 @@ namespace DI_Service_LifeTime.Services.InterImpl
         }
     }
 }
-}
