@@ -1,7 +1,13 @@
+using DI_Service_LifeTime.Services.Inter;
+using DI_Service_LifeTime.Services.InterImpl;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ISingletonGuidService,SingletonGuidServiceImpl>();
+builder.Services.AddScoped<IScopedGuidService,ScopedGuidServiceImpl>();
+builder.Services.AddTransient<ITransientGuidService,TransientGuidServiceImpl>();
 
 var app = builder.Build();
 
